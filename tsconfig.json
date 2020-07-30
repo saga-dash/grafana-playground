@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "lib": [
+      "es5",
+      "es2015.promise",
+      "es2015.collection",
+      "es2015.symbol.wellknown",
+      "es2017",
+      "ES2019"
+    ],
+    "outDir": "./dist/",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "target": "ES2019",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}

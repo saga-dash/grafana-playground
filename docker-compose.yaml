@@ -1,0 +1,33 @@
+version: "3"
+services:
+  grafana:
+    image: grafana/grafana:7.1.1
+    volumes:
+      - ./shared/grrafana:/var/lib/grafana
+      - ./resources/grafana/datasource/datasources.yaml:/etc/grafana/provisioning/datasources/datasources.yaml
+    ports:
+      - 3000:3000
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: pass
+
+  prometheus:
+    image: prom/prometheus:v2.19.3
+    volumes:
+      - ./resources/prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml
+    expose:
+      - 9090
+    ports:
+      - 9090:9090
+  pushgateway:
+    image: prom/pushgateway:v1.2.0
+    ports:
+      - 9091:9091
+
+  # node-exporter:
+  #   image: quay.io/prometheus/node-exporter
+  #   ports:
+  #     - 9100:9100
+  #   volumes:
+  #     - /proc:/host/proc
+  #     - /sys:/host/sys
+  #     - /:/rootfs

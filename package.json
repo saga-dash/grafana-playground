@@ -1,0 +1,22 @@
+{
+  "name": "grafana-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:ts": "ts-node-dev src/app.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "@types/node": "14.0.14",
+    "ts-node": "8.10.2",
+    "ts-node-dev": "1.0.0-pre.56",
+    "typescript": "3.9.5"
+  },
+  "dependencies": {
+    "prom-client": "12.0.0"
+  }
+}
